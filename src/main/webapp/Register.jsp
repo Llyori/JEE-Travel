@@ -22,18 +22,19 @@
                                 	<%
 										String message = (String) request.getAttribute("message");
   										if(message != null){
-											<div class="alert alert-fill alert-icon alert-primary" role="alert">
-    											<em class="icon ni ni-alert-circle"></em> 
-    											<strong>Order has been placed</strong>. Your will be redirect for make your payment. 
-											</div>
+											if(message == "Reussi"){
+												out.println("<div class='alert alert-fill alert-icon alert-success' role='alert'> <em class='icon ni ni-alert-circle'></em> <strong>Compte créé avec succès.</div>");
+											}else
+												out.println("<div class='alert alert-fill alert-icon alert-danger' role='alert'> <em class='icon ni ni-alert-circle'></em> <strong>"+message+".</div>");
 										}
+										
 									%>
                                     <div class="nk-block-head-content">
                                         <h4 class="nk-block-title">Register</h4>
                                         <div class="nk-block-des">
                                             <p>Créer un Compte</p>
                                         </div>
-                                    </div>`
+                                    </div>
                                 </div>
                                 <form action="register" method="post">
                                     <div class="form-group">

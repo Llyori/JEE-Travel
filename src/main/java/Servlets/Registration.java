@@ -26,16 +26,23 @@ public class Registration extends HttpServlet {
 		user.setPasscode(request.getParameter("passcode"));
 		user.setTelephone(request.getParameter("telephone"));
 		
-		if(tu.ajouterUtilisateur(user)) {
-			String text = "Enregistrement Réussi, Compte créé avec Succès";
+		if(request.getParameter("Cpasscode").equals(request.getParameter("passcode"))) {
+			if(tu.ajouterUtilisateur(user)) {
+				String text = "Reussi";
+				request.setAttribute("message", text);
+				this.getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
+			}
+			else {
+				request.setAttribute("message", TraitementUtilisateurs.message);
+				this.getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
+			}
+		}else {
+			String text = "Veillez entrer les mots de passe corrects !";
 			request.setAttribute("message", text);
 			this.getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
 		}
-		else {
-			String text = "Echec de l\' Enregistrement Réussi";
-			request.setAttribute("message", text);
-			this.getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
-		}
+		
+		
 	}
 
 }

@@ -22,6 +22,15 @@
                         <div class="card card-bordered">
                             <div class="card-inner card-inner-lg">
                                 <div class="nk-block-head">
+                                
+                                <%
+										String message = (String) request.getAttribute("message");
+  										if(message != null){
+												out.println("<div class='alert alert-fill alert-icon alert-danger' role='alert'> <em class='icon ni ni-alert-circle'></em> <strong>"+message+".</div>");
+										}
+										
+								%>
+                                
                                     <div class="nk-block-head-content">
                                         <h4 class="nk-block-title">Sign-In</h4>
                                         <div class="nk-block-des">
@@ -29,13 +38,13 @@
                                         </div>
                                     </div>
                                 </div>
-                                <form action="html/index.html">
+                                <form method="post" action="login">
                                     <div class="form-group">
                                         <div class="form-label-group">
                                             <label class="form-label" for="default-01">Email</label>
                                         </div>
                                         <div class="form-control-wrap">
-                                            <input type="text" name="email" class="form-control form-control-lg" id="default-01" placeholder="Enter your email address or username">
+                                            <input type="text" name="email" class="form-control form-control-lg" id="default-01" placeholder="Enter your email address or username" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -48,7 +57,7 @@
                                                 <em class="passcode-icon icon-show icon ni ni-eye"></em>
                                                 <em class="passcode-icon icon-hide icon ni ni-eye-off"></em>
                                             </a>
-                                            <input type="password" name="passcode" class="form-control form-control-lg" id="password" placeholder="Enter your passcode">
+                                            <input type="password" name="passcode" class="form-control form-control-lg" id="password" placeholder="Enter your passcode" required>
                                         </div>
                                     </div>
                                     <div class="form-group">

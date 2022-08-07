@@ -5,6 +5,14 @@ public class Role {
 	private int idRole;
 	private String nomRole;
 	
+	public Role() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Role(int idRole, String nomRole) {
+		this.idRole = idRole;
+		this.nomRole = nomRole;
+	}
 	
 	public int getIdRole() {
 		return idRole;

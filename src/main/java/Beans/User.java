@@ -2,12 +2,14 @@ package Beans;
 
 public class User {
 	
+	private int id;
 	private String Nom;
 	private String email;
 	private String passcode;
 	private Role role; 
 	private String uuid;
 	private String telephone;
+	private String statut;
 	
 	
 	
@@ -46,6 +48,18 @@ public class User {
 	}
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getStatut() {
+		return statut;
+	}
+	public void setStatut(String statut) {
+		this.statut = statut;
 	}
 	
 	
