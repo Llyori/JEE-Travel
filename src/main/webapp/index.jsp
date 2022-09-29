@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zxx" class="js">
 
-	<jsp:include page="Partiel/base.jsp"/>
+	<jsp:include page="Menus/base.jsp"/>
 
 
 <body class="nk-body bg-white npc-general pg-auth">
@@ -44,7 +44,7 @@
                                             <label class="form-label" for="default-01">Email</label>
                                         </div>
                                         <div class="form-control-wrap">
-                                            <input type="text" name="email" class="form-control form-control-lg" id="default-01" placeholder="Enter your email address or username" required>
+                                            <input type="email" name="email" class="form-control form-control-lg" id="default-01" placeholder="Enter your email address" required>
                                         </div>
                                     </div>
                                     <div class="form-group">

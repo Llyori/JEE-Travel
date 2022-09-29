@@ -18,13 +18,20 @@ public class LogIn extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		try {
+			request.getSession().invalidate();
+			request.logout();
+		} catch (ServletException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		this.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);		
 	}
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		tu.Login(request.getParameter("email"), request.getParameter("passcode"));
 	if(TraitementUtilisateurs.a == 1) {
 		user = tu.FindUserByEmail(request.getParameter("email"));
-		System.out.println(user.getNom());
 		this.getServletContext().getRequestDispatcher("/Accueil.jsp").forward(request, response);
 	}else {
 		String text = "Erreur d\'authentification, Remplissez de nouveau les champs !";
@@ -33,5 +40,7 @@ public class LogIn extends HttpServlet {
 	}
 		
 	}
+	
+	
 
 }

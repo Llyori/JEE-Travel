@@ -29,7 +29,7 @@
                                         </div>
                                     </a>
                                 </div>
-                            </div><!-- .nk-header-news -->
+                            </div>
                             <div class="nk-header-tools">
                                 <ul class="nk-quick-nav">
                                     <li class="dropdown user-dropdown">
@@ -48,7 +48,7 @@
                                             <div class="dropdown-inner user-card-wrap bg-lighter d-none d-md-block">
                                                 <div class="user-card">
                                                     <div class="user-avatar">
-                                                        <span>AB</span>
+                                                        <span><% out.println(LogIn.user.getNom().substring(0, 2).toUpperCase());%></span>
                                                     </div>
                                                     <div class="user-info">
                                                         <span class="lead-text"><% out.println(LogIn.user.getNom()); %></span>
@@ -66,7 +66,7 @@
                                             </div>
                                             <div class="dropdown-inner">
                                                 <ul class="link-list">
-                                                    <li><a href="#"><em class="icon ni ni-signout"></em><span>Sign out</span></a></li>
+                                                    <li><a href="login"><em class="icon ni ni-signout"></em><span>Sign out</span></a></li>
                                                 </ul>
                                             </div>
                                         </div>

@@ -2,12 +2,12 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
-	<jsp:include page="Partiel/base.jsp"/>
+	<jsp:include page="Menus/base.jsp"/>
 <body>
 	<div class="nk-app-root">
         <div class="nk-main ">
-        	<jsp:include page="Partiel/MenuVerti.jsp"/>
-        	<jsp:include page="Partiel/MenuHori.jsp"/>
+        	<jsp:include page="Menus/MenuVerti.jsp"/>
+        	<jsp:include page="Menus/MenuHori.jsp"/>
         </div>
     </div>
 </body>

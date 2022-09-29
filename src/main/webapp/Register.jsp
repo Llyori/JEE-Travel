@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zxx" class="js">
 
-	<jsp:include page="Partiel/base.jsp"/>
+	<jsp:include page="Menus/base.jsp"/>
 
 
 <body class="nk-body bg-white npc-general pg-auth">
