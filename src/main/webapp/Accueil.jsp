@@ -7,7 +7,9 @@
 	<div class="nk-app-root">
         <div class="nk-main ">
         	<jsp:include page="Menus/MenuVerti.jsp"/>
-        	<jsp:include page="Menus/MenuHori.jsp"/>
+        	<div class="nk-wrap">
+        		<jsp:include page="Menus/MenuHori.jsp"/>
+        	</div>
         </div>
     </div>
 </body>

@@ -60,10 +60,6 @@ public class TraitementUtilisateurs {
 				else if(resultat.getInt(1) == 0)
 					a = 0;
 			}
-//			PreparedStatement prepare = ConnexionBD.connexion.prepareStatement("");
-//			prepare.setString(1, password);
-//			prepare.setString(2, Email);
-//			prepare.execute();
 			
 			return a;
 		}catch(SQLException e) {
@@ -121,7 +117,7 @@ public class TraitementUtilisateurs {
 		ConnexionBD.loadDatabase();
 		try {
 			statement = ConnexionBD.connexion.createStatement();
-			resultat = statement.executeQuery("Select id, idrole, uuid, nom, telephone, statut, emailutilisateur from utilisateur where emailutilisateur = '"+ email+"';");
+			resultat = statement.executeQuery("Select id, idrole, uuid, nom, telephone, statut, emailutilisateur, dernieredateconnexion from utilisateur where emailutilisateur = '"+ email+"';");
 			while(resultat.next()) {
 				user.setId(resultat.getInt(1));
 				user.setRole(FindRoleById(resultat.getInt(2)));
@@ -130,6 +126,31 @@ public class TraitementUtilisateurs {
 				user.setTelephone(resultat.getString(5));
 				user.setStatut(resultat.getString(6));
 				user.setEmail(resultat.getString(7));
+				user.setDernieredateconnexion(resultat.getString(8));
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return user;
+	}
+	
+	public User FindUserByUuid(String uuid) {
+		Statement statement = null;
+		ResultSet resultat = null;
+		User user = new User();
+		ConnexionBD.loadDatabase();
+		try {
+			statement = ConnexionBD.connexion.createStatement();
+			resultat = statement.executeQuery("Select id, idrole, uuid, nom, telephone, statut, emailutilisateur, dernieredateconnexion from utilisateur where uuid = '"+ uuid+"';");
+			while(resultat.next()) {
+				user.setId(resultat.getInt(1));
+				user.setRole(FindRoleById(resultat.getInt(2)));
+				user.setUuid(resultat.getString(3));
+				user.setNom(resultat.getString(4));
+				user.setTelephone(resultat.getString(5));
+				user.setStatut(resultat.getString(6));
+				user.setEmail(resultat.getString(7));
+				user.setDernieredateconnexion(resultat.getString(8));
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();

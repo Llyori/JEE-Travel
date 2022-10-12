@@ -1,7 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" import="Servlets.LogIn"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="zxx" class="js">
 
-	<jsp:include page="Menus/base.jsp"/>
+	<jsp:include page="/Menus/base.jsp"/>
 
 
 <body class="nk-body bg-white npc-general pg-auth">
@@ -15,8 +17,8 @@
                     <div class="nk-block nk-block-middle nk-auth-body  wide-xs">
                         <div class="brand-logo pb-4 text-center">
                             <a href="html/index.html" class="logo-link">
-                                <img class="logo-light logo-img logo-img-lg" src="./images/logo.png" srcset="./images/logo2x.png 2x" alt="logo">
-                                <img class="logo-dark logo-img logo-img-lg" src="./images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
+                                <img class="logo-light logo-img logo-img-lg" src="./images/logo.png"  alt="logo">
+                                <img class="logo-dark logo-img logo-img-lg" src="./images/logo-dark.png" alt="logo-dark">
                             </a>
                         </div>
                         <div class="card card-bordered">
@@ -43,8 +45,16 @@
                                         <div class="form-label-group">
                                             <label class="form-label" for="default-01">Email</label>
                                         </div>
+                                        
                                         <div class="form-control-wrap">
-                                            <input type="email" name="email" class="form-control form-control-lg" id="default-01" placeholder="Enter your email address" required>
+                                        	<% 
+                                    			if(LogIn.Email == null)
+                                    				out.println("<input type='email' name='email' class='form-control form-control-lg' id='default-01' placeholder='Enter your email address' required>");
+                                            	else
+                                            		out.println("<input type='email' name='email' class='form-control form-control-lg' id='default-01' value="+LogIn.Email+" required>");
+
+                                    		%>
+                                            
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -81,9 +91,7 @@
         </div>
         <!-- main @e -->
     </div>
-    <!-- app-root @e -->
-    <!-- JavaScript -->
-    
-    <!-- select region modal -->
+    </div>
+    </body>
     
 </html>

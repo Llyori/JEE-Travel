@@ -1,4 +1,4 @@
-<div class="nk-sidebar nk-sidebar-fixed " data-content="sidebarMenu">
+<div class="nk-sidebar nk-sidebar-fixed is-dark" data-content="sidebarMenu">
                 <div class="nk-sidebar-element nk-sidebar-head">
                     <div class="nk-sidebar-brand">
                         <a href="html/index.html" class="logo-link nk-sidebar-logo">
@@ -19,7 +19,7 @@
                                         <h6 class="overline-title text-primary-alt">Administrateur</h6>
                                     </li><!-- .nk-menu-item -->
                                     <li class="nk-menu-item">
-                                        <a href="#" class="nk-menu-link" target="_blank">
+                                        <a href="traveladmindashboard" class="nk-menu-link" target="_blank">
                                             <span class="nk-menu-icon"><em class="icon ni ni-sign-btc-alt"></em></span>
                                             <span class="nk-menu-text">Travel Admin</span><span class="nk-menu-badge">HOT</span>
                                         </a>
@@ -38,29 +38,15 @@
                                     </li><!-- .nk-menu-heading -->
                                     <li class="nk-menu-item has-sub">
                                         <a href="#" class="nk-menu-link nk-menu-toggle">
-                                            <span class="nk-menu-icon"><em class="icon ni ni-tile-thumb"></em></span>
-                                            <span class="nk-menu-text">Projects</span>
-                                        </a>
-                                        <ul class="nk-menu-sub">
-                                            <li class="nk-menu-item">
-                                                <a href="html/project-card.html" class="nk-menu-link"><span class="nk-menu-text">Project Cards</span></a>
-                                            </li>
-                                            <li class="nk-menu-item">
-                                                <a href="html/project-list.html" class="nk-menu-link"><span class="nk-menu-text">Project List</span></a>
-                                            </li>
-                                        </ul><!-- .nk-menu-sub -->
-                                    </li><!-- .nk-menu-item -->
-                                    <li class="nk-menu-item has-sub">
-                                        <a href="#" class="nk-menu-link nk-menu-toggle">
                                             <span class="nk-menu-icon"><em class="icon ni ni-file-docs"></em></span>
-                                            <span class="nk-menu-text">AML / KYCs</span>
+                                            <span class="nk-menu-text">Réservations</span>
                                         </a>
                                         <ul class="nk-menu-sub">
                                             <li class="nk-menu-item">
-                                                <a href="html/kyc-list-regular.html" class="nk-menu-link"><span class="nk-menu-text">KYC List - Regular</span></a>
+                                                <a href="reservation" class="nk-menu-link"><span class="nk-menu-text">Réserver</span></a>
                                             </li>
                                             <li class="nk-menu-item">
-                                                <a href="html/kyc-details-regular.html" class="nk-menu-link"><span class="nk-menu-text">KYC Details - Regular</span></a>
+                                                <a href="#" class="nk-menu-link"><span class="nk-menu-text"> Statut Réservation</span></a>
                                             </li>
                                         </ul><!-- .nk-menu-sub -->
                                     </li><!-- .nk-menu-item -->
@@ -71,80 +57,42 @@
                                         </a>
                                         <ul class="nk-menu-sub">
                                             <li class="nk-menu-item">
-                                                <a href="html/transaction-basic.html" class="nk-menu-link"><span class="nk-menu-text">Tranx List - Basic</span></a>
+                                                <a href="#" class="nk-menu-link"><span class="nk-menu-text">Non Réglées</span></a>
                                             </li>
                                             <li class="nk-menu-item">
-                                                <a href="html/transaction-crypto.html" class="nk-menu-link"><span class="nk-menu-text">Tranx List - Crypto</span></a>
+                                                <a href="#" class="nk-menu-link"><span class="nk-menu-text">Historique</span></a>
                                             </li>
                                         </ul><!-- .nk-menu-sub -->
                                     </li><!-- .nk-menu-item -->
                                     <li class="nk-menu-item has-sub">
                                         <a href="#" class="nk-menu-link nk-menu-toggle">
                                             <span class="nk-menu-icon"><em class="icon ni ni-grid-alt"></em></span>
-                                            <span class="nk-menu-text">Applications</span>
+                                            <span class="nk-menu-text">Echange</span>
                                         </a>
                                         <ul class="nk-menu-sub">
                                             <li class="nk-menu-item">
-                                                <a href="html/apps-messages.html" class="nk-menu-link"><span class="nk-menu-text">Messages</span></a>
-                                            </li>
-                                            <li class="nk-menu-item">
-                                                <a href="html/apps-inbox.html" class="nk-menu-link"><span class="nk-menu-text">Inbox / Mail</span></a>
-                                            </li>
-                                            <li class="nk-menu-item">
-                                                <a href="html/apps-file-manager.html" class="nk-menu-link"><span class="nk-menu-text">File Manager</span></a>
-                                            </li>
-                                            <li class="nk-menu-item">
-                                                <a href="html/apps-chats.html" class="nk-menu-link"><span class="nk-menu-text">Chats / Messenger</span></a>
-                                            </li>
-                                            <li class="nk-menu-item">
-                                                <a href="html/apps-calendar.html" class="nk-menu-link"><span class="nk-menu-text">Calendar</span></a>
-                                            </li>
-                                            <li class="nk-menu-item">
-                                                <a href="html/apps-kanban.html" class="nk-menu-link"><span class="nk-menu-text">Kanban Board</span></a>
+                                                <a href="#" class="nk-menu-link"><span class="nk-menu-text">Messages</span></a>
                                             </li>
                                         </ul><!-- .nk-menu-sub -->
                                     </li><!-- .nk-menu-item -->
                                     <li class="nk-menu-item has-sub">
                                         <a href="#" class="nk-menu-link nk-menu-toggle">
                                             <span class="nk-menu-icon"><em class="icon ni ni-file-docs"></em></span>
-                                            <span class="nk-menu-text">Invoice</span>
+                                            <span class="nk-menu-text">Fichiers</span>
                                         </a>
                                         <ul class="nk-menu-sub">
                                             <li class="nk-menu-item">
-                                                <a href="html/invoice-list.html" class="nk-menu-link"><span class="nk-menu-text">Invoice List</span></a>
+                                                <a href="#" class="nk-menu-link"><span class="nk-menu-text">Invoice List</span></a>
                                             </li>
                                             <li class="nk-menu-item">
-                                                <a href="html/invoice-details.html" class="nk-menu-link"><span class="nk-menu-text">Invoice Details</span></a>
-                                            </li>
-                                        </ul><!-- .nk-menu-sub -->
-                                    </li><!-- .nk-menu-item -->
-                                    <li class="nk-menu-item has-sub">
-                                        <a href="#" class="nk-menu-link nk-menu-toggle">
-                                            <span class="nk-menu-icon"><em class="icon ni ni-card-view"></em></span>
-                                            <span class="nk-menu-text">Products</span>
-                                        </a>
-                                        <ul class="nk-menu-sub">
-                                            <li class="nk-menu-item">
-                                                <a href="html/product-list.html" class="nk-menu-link"><span class="nk-menu-text">Product List</span></a>
-                                            </li>
-                                            <li class="nk-menu-item">
-                                                <a href="html/product-card.html" class="nk-menu-link"><span class="nk-menu-text">Product Card</span></a>
-                                            </li>
-                                            <li class="nk-menu-item">
-                                                <a href="html/product-details.html" class="nk-menu-link"><span class="nk-menu-text">Product Details</span></a>
+                                                <a href="#" class="nk-menu-link"><span class="nk-menu-text">Invoice Details</span></a>
                                             </li>
                                         </ul><!-- .nk-menu-sub -->
                                     </li><!-- .nk-menu-item -->
                                     <li class="nk-menu-item">
-                                        <a href="html/pricing-table.html" class="nk-menu-link">
-                                            <span class="nk-menu-icon"><em class="icon ni ni-view-col"></em></span>
-                                            <span class="nk-menu-text">Pricing Table</span>
-                                        </a>
-                                    </li><!-- .nk-menu-item -->
-                                    <li class="nk-menu-item">
-                                        <a href="html/gallery.html" class="nk-menu-link">
+                                        <a href="#" class="nk-menu-link">
                                             <span class="nk-menu-icon"><em class="icon ni ni-img"></em></span>
-                                            <span class="nk-menu-text">Image Gallery</span>
+                                            <span class="nk-menu-text">Gallery</span>
                                         </a>
                                     </li><!-- .nk-menu-item -->
                                 </ul><!-- .nk-menu -->

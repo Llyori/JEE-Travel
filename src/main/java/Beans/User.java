@@ -10,6 +10,7 @@ public class User {
 	private String uuid;
 	private String telephone;
 	private String statut;
+	private String dernieredateconnexion;
 	
 	
 	
@@ -60,6 +61,12 @@ public class User {
 	}
 	public void setStatut(String statut) {
 		this.statut = statut;
+	}
+	public String getDernieredateconnexion() {
+		return dernieredateconnexion;
+	}
+	public void setDernieredateconnexion(String dernieredateconnexion) {
+		this.dernieredateconnexion = dernieredateconnexion;
 	}
 	
 	

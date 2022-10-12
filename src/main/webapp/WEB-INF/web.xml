@@ -25,6 +25,33 @@
     	<url-pattern>/login</url-pattern>
   	</servlet-mapping>
   	
+  	<servlet>
+    	<servlet-name>ProfilUtilisateur</servlet-name>
+    	<servlet-class>Servlets.ProfilUtilisateur</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>ProfilUtilisateur</servlet-name>
+    	<url-pattern>/profilutilisateur</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+    	<servlet-name>TravelAdmin</servlet-name>
+    	<servlet-class>Servlets.TravelAdmin</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>TravelAdmin</servlet-name>
+    	<url-pattern>/traveladmindashboard</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+    	<servlet-name>Reservation</servlet-name>
+    	<servlet-class>Servlets.Reservation</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>Reservation</servlet-name>
+    	<url-pattern>/reservation</url-pattern>
+  	</servlet-mapping>
+  	
   	
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>

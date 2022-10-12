@@ -3,9 +3,9 @@
 
 
 
-<div class="nk-wrap ">
+
                 <!-- main header @s -->
-                <div class="nk-header nk-header-fixed is-light">
+                <div class="nk-header nk-header-fixed is-grey">
                     <div class="container-fluid">
                         <div class="nk-header-wrap">
                             <div class="nk-menu-trigger d-xl-none ml-n1">
@@ -58,15 +58,14 @@
                                             </div>
                                             <div class="dropdown-inner">
                                                 <ul class="link-list">
-                                                    <li><a href="html/user-profile-regular.html"><em class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
-                                                    <li><a href="html/user-profile-setting.html"><em class="icon ni ni-setting-alt"></em><span>Account Setting</span></a></li>
-                                                    <li><a href="html/user-profile-activity.html"><em class="icon ni ni-activity-alt"></em><span>Login Activity</span></a></li>
-                                                    <li><a class="dark-switch" href="#"><em class="icon ni ni-moon"></em><span>Dark Mode</span></a></li>
+                                                    <li><a href=<% out.println("profilutilisateur?uuid="+LogIn.user.getUuid()); %>><em class="icon ni ni-user-alt"></em><span>Voir mon Profil</span></a></li>
+                                                    <li><a href=<% out.println("profilutilisateur?uuid2="+LogIn.user.getUuid()); %>><em class="icon ni ni-setting-alt"></em><span>Paramètres</span></a></li>
+                                                    <li><a class="dark-switch" href="#"><em class="icon ni ni-moon"></em><span>Mode Sombre</span></a></li>
                                                 </ul>
                                             </div>
-                                            <div class="dropdown-inner">
+                                            <div class="dr	opdown-inner">
                                                 <ul class="link-list">
-                                                    <li><a href="login"><em class="icon ni ni-signout"></em><span>Sign out</span></a></li>
+                                                    <li><a href="login"><em class="icon ni ni-signout"></em><span>Déconnexion</span></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -77,7 +76,7 @@
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-xl dropdown-menu-right dropdown-menu-s1">
                                             <div class="dropdown-head">
-                                                <span class="sub-title nk-dropdown-title">Notifications</span>
+                                                <span class="sub-title nk-dropdown-title">Notifications</span>		
                                                 <a href="#">Mark All as Read</a>
                                             </div>
                                             <div class="dropdown-body">
@@ -148,5 +147,4 @@
                         </div><!-- .nk-header-wrap -->
                     </div><!-- .container-fliud -->
                 </div>
-               </div>
             

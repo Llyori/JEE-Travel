@@ -13,6 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 public class LogIn extends HttpServlet {
 	
 	public static User user = new User();
+	public static String Email=null;
 
 	TraitementUtilisateurs tu = new TraitementUtilisateurs(); 
 
@@ -29,15 +30,16 @@ public class LogIn extends HttpServlet {
 	}
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		tu.Login(request.getParameter("email"), request.getParameter("passcode"));
-	if(TraitementUtilisateurs.a == 1) {
-		user = tu.FindUserByEmail(request.getParameter("email"));
-		this.getServletContext().getRequestDispatcher("/Accueil.jsp").forward(request, response);
-	}else {
-		String text = "Erreur d\'authentification, Remplissez de nouveau les champs !";
-		request.setAttribute("message", text);
-		this.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
-	}
+			tu.Login(request.getParameter("email"), request.getParameter("passcode"));
+		if(TraitementUtilisateurs.a == 1) {
+			user = tu.FindUserByEmail(request.getParameter("email"));
+			this.getServletContext().getRequestDispatcher("/Accueil.jsp").forward(request, response);
+		}else {
+			String text = "Erreur d\'authentification, Remplissez de nouveau les champs !";
+			Email=request.getParameter("email");
+			request.setAttribute("message", text);
+			this.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+		}
 		
 	}
 	
