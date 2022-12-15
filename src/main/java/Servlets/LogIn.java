@@ -31,7 +31,7 @@ public class LogIn extends HttpServlet {
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			tu.Login(request.getParameter("email"), request.getParameter("passcode"));
-		if(TraitementUtilisateurs.a == 1) {
+		if(TraitementUtilisateurs.a == 0) {
 			user = tu.FindUserByEmail(request.getParameter("email"));
 			this.getServletContext().getRequestDispatcher("/Accueil.jsp").forward(request, response);
 		}else {

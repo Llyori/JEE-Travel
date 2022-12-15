@@ -15,7 +15,7 @@ public class ConnexionBD {
 		
 		}
 		try {
-			connexion= DriverManager.getConnection("jdbc:mysql://localhost:3308/gestion_location_voiture","root","");
+			connexion= DriverManager.getConnection("jdbc:mysql://localhost:3308/travell","root","");
 		}catch(SQLException e) {
 				e.printStackTrace();
 			}

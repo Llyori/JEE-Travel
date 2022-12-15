@@ -19,7 +19,7 @@
                                         <h6 class="overline-title text-primary-alt">Administrateur</h6>
                                     </li><!-- .nk-menu-item -->
                                     <li class="nk-menu-item">
-                                        <a href="traveladmindashboard" class="nk-menu-link" target="_blank">
+                                        <a href="traveladmindashboard" class="nk-menu-link">
                                             <span class="nk-menu-icon"><em class="icon ni ni-sign-btc-alt"></em></span>
                                             <span class="nk-menu-text">Travel Admin</span><span class="nk-menu-badge">HOT</span>
                                         </a>

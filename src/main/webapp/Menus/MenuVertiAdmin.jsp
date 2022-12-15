@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" import="Servlets.LogIn" 
+    pageEncoding="ISO-8859-1"%>
+
+
 <div class="nk-sidebar nk-sidebar-fixed " data-content="sidebarMenu">
                 <div class="nk-sidebar-element nk-sidebar-head">
                     <div class="nk-sidebar-brand">
@@ -62,7 +66,7 @@
                                         </a>
                                     </li>
                                     <li class="nk-menu-item">
-                                        <a href="#" class="nk-menu-link">
+                                        <a href="voiture" class="nk-menu-link">
                                             <span class="nk-menu-icon"><em class="icon ni ni-img"></em></span>
                                             <span class="nk-menu-text">Gallery</span>
                                         </a>
@@ -92,7 +96,7 @@
                                 </ul>
                                 <div class="user-account-actions">
                                     <ul class="g-3">
-                                        <li><a href="Dashboard/TravelAdmin/Voiture.jsp" class="btn btn-lg btn-primary"><span>Véhicules</span></a></li>
+                                        <li><a <% out.println("href=traveladmindashboard?uuid="+LogIn.user.getUuid()); %> class="btn btn-lg btn-primary"><span>Véhicules</span></a></li>
                                         <li><a href="#" class="btn btn-lg btn-warning"><span>Réservations</span></a></li>
                                     </ul>
                                 </div>

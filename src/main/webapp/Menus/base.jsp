@@ -8,14 +8,14 @@
     <!-- Page Title  -->
     <title>Login</title>
     <!-- StyleSheets  -->
-    <link rel="stylesheet" href="./assets/css/dashlite.css?ver=2.9.1">
-    <link id="skin-default" rel="stylesheet" href="./assets/css/theme.css?ver=2.9.1">
+    <link rel="stylesheet" href="./assets/css/dashlite.css">
+    <link id="skin-default" rel="stylesheet" href="./assets/css/theme.css">
     
     
-    <script src="./assets/js/charts/gd-default.js?ver=2.9.1"></script>
+    <script src="./assets/js/charts/gd-default.js"></script>
     
     
-    <script src="./assets/js/charts/chart-crypto.js?ver=2.9.1"></script>
-    <script src="./assets/js/bundle.js?ver=2.9.1"></script>
-    <script src="./assets/js/scripts.js?ver=2.9.1"></script>
+    <script src="./assets/js/charts/chart-crypto.js"></script>
+    <script src="./assets/js/bundle.js"></script>
+    <script src="./assets/js/scripts.js"></script>
 </head>

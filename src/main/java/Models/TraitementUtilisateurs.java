@@ -29,7 +29,7 @@ public class TraitementUtilisateurs {
 		
 		try {
 			PreparedStatement preparedStatement = ConnexionBD.connexion.prepareStatement("INSERT INTO Utilisateur(idrole, uuid, nom, Telephone, motpasse, statut, emailutilisateur) values(?,?,?,?,?,?,?);");
-			preparedStatement.setInt(1, 1);
+			preparedStatement.setInt(1, 2);
 			preparedStatement.setString(2, user.getUuid());
 			preparedStatement.setString(3, user.getNom());
 			preparedStatement.setString(4, user.getTelephone());
@@ -117,7 +117,7 @@ public class TraitementUtilisateurs {
 		ConnexionBD.loadDatabase();
 		try {
 			statement = ConnexionBD.connexion.createStatement();
-			resultat = statement.executeQuery("Select id, idrole, uuid, nom, telephone, statut, emailutilisateur, dernieredateconnexion from utilisateur where emailutilisateur = '"+ email+"';");
+			resultat = statement.executeQuery("Select id, idrole, uuid, nom, telephone, statut, emailutilisateur from utilisateur where emailutilisateur = '"+ email+"';");
 			while(resultat.next()) {
 				user.setId(resultat.getInt(1));
 				user.setRole(FindRoleById(resultat.getInt(2)));
@@ -126,8 +126,8 @@ public class TraitementUtilisateurs {
 				user.setTelephone(resultat.getString(5));
 				user.setStatut(resultat.getString(6));
 				user.setEmail(resultat.getString(7));
-				user.setDernieredateconnexion(resultat.getString(8));
 			}
+			System.out.println("Suis ici pour la recherche");
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
@@ -141,7 +141,7 @@ public class TraitementUtilisateurs {
 		ConnexionBD.loadDatabase();
 		try {
 			statement = ConnexionBD.connexion.createStatement();
-			resultat = statement.executeQuery("Select id, idrole, uuid, nom, telephone, statut, emailutilisateur, dernieredateconnexion from utilisateur where uuid = '"+ uuid+"';");
+			resultat = statement.executeQuery("Select id, idrole, uuid, nom, telephone, statut, emailutilisateur from utilisateur where uuid = '"+ uuid+"';");
 			while(resultat.next()) {
 				user.setId(resultat.getInt(1));
 				user.setRole(FindRoleById(resultat.getInt(2)));
@@ -150,7 +150,6 @@ public class TraitementUtilisateurs {
 				user.setTelephone(resultat.getString(5));
 				user.setStatut(resultat.getString(6));
 				user.setEmail(resultat.getString(7));
-				user.setDernieredateconnexion(resultat.getString(8));
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();
