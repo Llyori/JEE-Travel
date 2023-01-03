@@ -3,19 +3,14 @@ package Beans;
 public class Photo {
 	
 	private int idPhoto;
-	private int idVoiture;
+	private Voiture idVoiture;
 	private String photoEncrypt;
+	
 	public int getIdPhoto() {
 		return idPhoto;
 	}
 	public void setIdPhoto(int idPhoto) {
 		this.idPhoto = idPhoto;
-	}
-	public int getIdVoiture() {
-		return idVoiture;
-	}
-	public void setIdVoiture(int idVoiture) {
-		this.idVoiture = idVoiture;
 	}
 	public String getPhotoEncrypt() {
 		return photoEncrypt;
@@ -26,6 +21,12 @@ public class Photo {
 	
 	public Photo() {
 		// TODO Auto-generated constructor stub
+	}
+	public Voiture getIdVoiture() {
+		return idVoiture;
+	}
+	public void setIdVoiture(Voiture idVoiture) {
+		this.idVoiture = idVoiture;
 	}
 
 }

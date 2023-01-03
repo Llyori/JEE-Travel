@@ -13,7 +13,6 @@ import jakarta.servlet.http.HttpServletRequest;
 public class ImageBase64 {
 
 	public  String Encrypter(String routes) throws IOException{
-		System.out.println("Yo Salut enfin");
 		String chemin = "C:/Users/Ulrich Bolan/Pictures/"+routes;
 		String base64String="";
 		System.out.println(chemin);
@@ -21,20 +20,6 @@ public class ImageBase64 {
 		return base64String;
 	}
 	
-	int i = 1;
-	
-	public void Decrypter(String route){
-		System.out.println("Step7");
-		String base64String=route;
-		try(FileOutputStream stream =new FileOutputStream(new File("output"+i+".png"))){
-			stream.write(decode(base64String));
-			System.out.println("Decrypt OK mon gars !");
-			base64String = null;
-			i++;
-		}catch(IOException e) {
-			e.printStackTrace();
-		}
-	}
 	
 	public void Decrypter2(HttpServletRequest request, String route, int idPhoto) throws IOException {
 		String base64String=route;
@@ -54,10 +39,45 @@ public class ImageBase64 {
 				}
 			}
 			byte[] photobyte = Files.readAllBytes(file.toPath());
-			System.out.println(photobyte);
 			file = null;
 		}else {
 			File file = new File(chemin+"/ImagesTravel/output"+idPhoto+".png");
+			if(!file.exists()) {
+				try {
+					file.createNewFile();
+					FileOutputStream stream = new FileOutputStream(file);
+					stream.write(decode(base64String));
+				}catch (Exception e) {
+					e.printStackTrace();
+				}
+				file = null;
+			}
+		}
+			
+		
+	}
+	
+	public void Decrypter3(HttpServletRequest request, String route, String nomFichier, int idPhoto) throws IOException {
+		String base64String=route;
+		
+		String chemin = request.getServletContext().getRealPath("Dashboard").replace(java.io.File.separatorChar, '/');
+		File folder = new File(chemin+"/ImagesTravel");
+		if(!folder.exists()) {
+			folder.mkdir();
+			File file = new File(chemin+"/ImagesTravel/"+nomFichier+""+idPhoto+".png");
+			if(!file.exists()) {
+				try {
+					file.createNewFile();
+					FileOutputStream stream = new FileOutputStream(file);
+					stream.write(decode(base64String));
+				}catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			byte[] photobyte = Files.readAllBytes(file.toPath());
+			file = null;
+		}else {
+			File file = new File(chemin+"/ImagesTravel/"+nomFichier+""+idPhoto+".png");
 			if(!file.exists()) {
 				try {
 					file.createNewFile();

@@ -291,6 +291,37 @@
         NioApp.Toggle.removed($toggle.data('target'), attr);
       }
     });
+  }; // Compact Sidebar @v1.0
+
+
+  NioApp.sbCompact = function () {
+    var toggle = '.nk-nav-compact',
+        $toggle = $(toggle),
+        $content = $('[data-content]'),
+        $sidebar = $('.' + _sidebar),
+        $sidebar_body = $('.' + _sidebar + '-body');
+    $toggle.on('click', function (e) {
+      e.preventDefault();
+      var $self = $(this),
+          get_target = $self.data('target'),
+          $self_content = $('[data-content=' + get_target + ']');
+      $self.toggleClass('compact-active');
+      $self_content.toggleClass('is-compact');
+
+      if (!$self_content.hasClass('is-compact')) {
+        $self_content.removeClass('has-hover');
+      }
+    });
+    $sidebar_body.on('mouseenter', function (e) {
+      if ($sidebar.hasClass('is-compact')) {
+        $sidebar.addClass('has-hover');
+      }
+    });
+    $sidebar_body.on('mouseleave', function (e) {
+      if ($sidebar.hasClass('is-compact')) {
+        $sidebar.removeClass('has-hover');
+      }
+    });
   }; // Animate FormSearch @v1.0
 
 
@@ -528,7 +559,7 @@
       responsive: {
         details: true
       },
-      buttons: ['copy', 'excel', 'csv', 'pdf']
+      buttons: ['copy', 'excel', 'csv', 'pdf', 'colvis']
     });
     $.fn.DataTable.ext.pager.numbers_length = 7;
   }; // BootStrap Extended
@@ -918,6 +949,7 @@
     NioApp.coms.docReady.push(NioApp.Picker.init);
     NioApp.coms.docReady.push(NioApp.Addons.Init);
     NioApp.coms.docReady.push(NioApp.Wizard);
+    NioApp.coms.docReady.push(NioApp.sbCompact);
     NioApp.coms.winLoad.push(NioApp.ModeSwitch);
   };
 

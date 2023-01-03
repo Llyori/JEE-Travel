@@ -8,7 +8,7 @@
 		<jsp:include page="../../Menus/base.jsp"/>
 	</head>
 	
-	<body>
+	<body class="nk-body bg-lighter npc-general has-sidebar ">
 		<div class="nk-app-root">
 	        <div class="nk-main ">
 	            	<jsp:include page="../../Menus/MenuVertiAdmin.jsp"/>
@@ -37,8 +37,8 @@
 		                                    	<% for(Photo photo:Voitures.photos){ %>
 		                                        <div class="col-sm-6 col-lg-4 col-xxl-3">
 		                                            <div class="gallery card card-bordered">
-		                                                <a class="gallery-image popup-image" href="" >
-		                                                    <img class="w-100 rounded-top" src=<% out.println("ImageServlet?photo="+photo.getIdPhoto()); %> alt="">
+		                                                <a class="gallery-image popup-image" href=<% out.println("ImageServlet?photo="+photo.getIdPhoto()); %> >
+		                                                    <img class="w-100 rounded-top" src=<% out.println("ImageServlet?photo="+photo.getIdPhoto()); %> width="500" height="250" alt="">
 		                                                </a>
 		                                                <div class="gallery-body card-inner align-center justify-between flex-wrap g-2">
 		                                                    <div class="user-card">
@@ -46,8 +46,8 @@
 		                                                            <img src="./images/avatar/a-sm.jpg" alt="">
 		                                                        </div>
 		                                                        <div class="user-info">
-		                                                            <span class="lead-text">Dustin Mock</span>
-		                                                            <span class="sub-text">mock@softnio.com</span>
+		                                                            <span class="lead-text"><% out.println(photo.getIdVoiture().getMarque()); %></span>
+		                                                            <span class="sub-text"><% out.println(photo.getIdVoiture().getModele()); %></span>
 		                                                        </div>
 		                                                    </div>
 		                                                    <div>

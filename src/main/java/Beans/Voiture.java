@@ -7,8 +7,8 @@ public class Voiture {
 	
 	private String[] photovehicule;
 	private String[] assurance;
-	private String[] cartegrises;;
-	private int idVoiture, prixlocation, prixvente, nbreplaces, nbreEx;
+	private String[] cartegrises;
+	private int idVoiture, prixlocation, prixvente, nbreplaces, nbreEx, nombreReserve;
 	private String marque, modele, immatriculation, statut;
 	
 	
@@ -111,6 +111,12 @@ public class Voiture {
 	}
 	public void setNbreEx(int nbreEx) {
 		this.nbreEx = nbreEx;
+	}
+	public int getNombreReserve() {
+		return nombreReserve;
+	}
+	public void setNombreReserve(int nombreReserve) {
+		this.nombreReserve = nombreReserve;
 	}
 	
 	

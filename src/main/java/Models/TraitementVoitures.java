@@ -162,6 +162,31 @@ public class TraitementVoitures {
 		return voiture;
 	}
 	
+	public Voiture FindVoitureById(int id) {
+		Statement statement = null;
+		ResultSet resultat = null;
+		Voiture voiture = new Voiture();
+		ConnexionBD.loadDatabase();
+		try {
+			statement = ConnexionBD.connexion.createStatement();
+			resultat = statement.executeQuery("Select idVoiture, marque, modele, immatriculation, statut, prixvente, prixlocation, nombreplace, nombreexemplaire from voiture where idVoiture = "+ id+";");
+			while(resultat.next()) {
+				voiture.setIdVoiture(resultat.getInt(1));
+				voiture.setMarque(resultat.getString(2));
+				voiture.setModele(resultat.getString(3));
+				voiture.setImmatriculation(resultat.getString(4));
+				voiture.setStatut(resultat.getString(5));
+				voiture.setPrixvente(resultat.getInt(6));
+				voiture.setPrixlocation(resultat.getInt(7));
+				voiture.setNbreplaces(resultat.getInt(8));
+				voiture.setNbreEx(resultat.getInt(9));
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return voiture;
+	}
+	
 	public List<Etat> ListeEtat() {
 		List<Etat> etats = new ArrayList<Etat>();
 		ResultSet resultat = null;
@@ -211,6 +236,7 @@ public class TraitementVoitures {
 	
 	
 	public List<Photo> PhotoVoitures(){
+		int a = 0;
 		Statement statement = null;
 		ResultSet resultat = null;
 		Photo photo = new Photo();
@@ -220,11 +246,89 @@ public class TraitementVoitures {
 			statement = ConnexionBD.connexion.createStatement();
 			resultat = statement.executeQuery("select * from photovoiture;");
 			while(resultat.next()) {
+				a=0;
 				photo.setIdPhoto(resultat.getInt(1));
-				System.out.println(photo.getIdPhoto());
-				photo.setIdVoiture(resultat.getInt(2));
+				photo.setIdVoiture(FindVoitureById(resultat.getInt(2)));
 				photo.setPhotoEncrypt(resultat.getString(3));
-				System.out.println(photo.getIdVoiture());
+				// Je dois d'abord parcourir le tableau pour pas afficher une photo de voiture deux fois
+				for(Photo photo2:photos) {
+					if(photo2.getIdVoiture().getIdVoiture() == photo.getIdVoiture().getIdVoiture()) {
+						a = 1;
+					}
+				}
+				if(a==0)
+					photos.add(photo);
+				photo = new Photo();
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return photos;
+	}
+	
+	public List<Photo> FindPhotoVoituresByIdVoiture(int idVoiture){
+		Statement statement = null;
+		ResultSet resultat = null;
+		Photo photo = new Photo();
+		List<Photo> photos = new ArrayList<Photo>();
+		ConnexionBD.loadDatabase();
+		try {
+			statement = ConnexionBD.connexion.createStatement();
+			resultat = statement.executeQuery("select * from photovoiture where idvoiture="+idVoiture+";");
+			while(resultat.next()) {
+				photo.setIdPhoto(resultat.getInt(1));
+				//System.out.println(photo.getIdPhoto());
+				photo.setIdVoiture(FindVoitureById(resultat.getInt(2)));
+				photo.setPhotoEncrypt(resultat.getString(3));
+				//System.out.println(photo.getIdVoiture());
+				photos.add(photo);
+				photo = new Photo();
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return photos;
+	}
+	
+	public List<Photo> FindPhotoAssuranceByIdVoiture(int idVoiture){
+		Statement statement = null;
+		ResultSet resultat = null;
+		Photo photo = new Photo();
+		List<Photo> photos = new ArrayList<Photo>();
+		ConnexionBD.loadDatabase();
+		try {
+			statement = ConnexionBD.connexion.createStatement();
+			resultat = statement.executeQuery("select * from photoassurance where idvoiture="+idVoiture+";");
+			while(resultat.next()) {
+				photo.setIdPhoto(resultat.getInt(1));
+				//System.out.println(photo.getIdPhoto());
+				photo.setIdVoiture(FindVoitureById(resultat.getInt(2)));
+				photo.setPhotoEncrypt(resultat.getString(3));
+				//System.out.println(photo.getIdVoiture());
+				photos.add(photo);
+				photo = new Photo();
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return photos;
+	}
+	
+	public List<Photo> FindPhotoCarteGriseByIdVoiture(int idVoiture){
+		Statement statement = null;
+		ResultSet resultat = null;
+		Photo photo = new Photo();
+		List<Photo> photos = new ArrayList<Photo>();
+		ConnexionBD.loadDatabase();
+		try {
+			statement = ConnexionBD.connexion.createStatement();
+			resultat = statement.executeQuery("select * from photocartegrise where idvoiture="+idVoiture+";");
+			while(resultat.next()) {
+				photo.setIdPhoto(resultat.getInt(1));
+				//System.out.println(photo.getIdPhoto());
+				photo.setIdVoiture(FindVoitureById(resultat.getInt(2)));
+				photo.setPhotoEncrypt(resultat.getString(3));
+				//System.out.println(photo.getIdVoiture());
 				photos.add(photo);
 				photo = new Photo();
 			}

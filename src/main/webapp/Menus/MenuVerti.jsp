@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" import="Servlets.LogIn" 
+    pageEncoding="ISO-8859-1"%>
+
 <div class="nk-sidebar nk-sidebar-fixed is-dark" data-content="sidebarMenu">
                 <div class="nk-sidebar-element nk-sidebar-head">
                     <div class="nk-sidebar-brand">
@@ -43,10 +46,13 @@
                                         </a>
                                         <ul class="nk-menu-sub">
                                             <li class="nk-menu-item">
-                                                <a href="reservation" class="nk-menu-link"><span class="nk-menu-text">Réserver</span></a>
+                                                <a href=<% out.println("voiture?IdUser="+LogIn.user.getId()); %> class="nk-menu-link"><span class="nk-menu-text">Réserver</span></a>
                                             </li>
                                             <li class="nk-menu-item">
-                                                <a href="#" class="nk-menu-link"><span class="nk-menu-text"> Statut Réservation</span></a>
+                                                <a href=<% out.println("reservation?idUser="+LogIn.user.getId()); %> class="nk-menu-link"><span class="nk-menu-text">Bons Réservations</span></a>
+                                            </li>
+                                            <li class="nk-menu-item">
+                                                <a href="#" class="nk-menu-link"><span class="nk-menu-text">Statut Réservations</span></a>
                                             </li>
                                         </ul><!-- .nk-menu-sub -->
                                     </li><!-- .nk-menu-item -->

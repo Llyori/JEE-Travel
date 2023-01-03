@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 @SuppressWarnings("serial")
 public class Registration extends HttpServlet {
 	
-	TraitementUtilisateurs tu = new TraitementUtilisateurs(); 
+	TraitementUtilisateurs tu = new TraitementUtilisateurs();
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		

@@ -1,4 +1,4 @@
-package Servlets;
+	package Servlets;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -25,7 +25,6 @@ public class Voitures extends HttpServlet{
 	public static List<Photo> photos = new ArrayList<Photo>();
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		
 		photos = traitementVoitures.PhotoVoitures();
 		for(Photo photo:photos) {
 			String photoEncrypt = photo.getPhotoEncrypt();
@@ -36,7 +35,11 @@ public class Voitures extends HttpServlet{
 			photoEncrypt = "";
 			System.out.println("Fin de la boucle pour Decrypter une image");
 		}
-		this.getServletContext().getRequestDispatcher("/Dashboard/TravelAdmin/Gallery.jsp").forward(request, response);
+		if(request.getParameter("IdUser") != null)
+			this.getServletContext().getRequestDispatcher("/Dashboard/Reservation/Reservation.jsp").forward(request, response);
+		else
+			this.getServletContext().getRequestDispatcher("/Dashboard/TravelAdmin/Gallery.jsp").forward(request, response);
+		
 	}
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
@@ -61,17 +64,23 @@ public class Voitures extends HttpServlet{
 		
 		for(String s:cartegrises) {
 			String string = imageBase64.Encrypter(s);
+			System.out.println(s);
 			listcartegrise.add(string);
+			string=new String();
 		}
 		
 		for(String s:photoassurance) {
+			System.out.println(s);
 			String string = imageBase64.Encrypter(s);
 			listphotoassurance.add(string);
+			string=new String();
 		}
 		
 		for(String s:photovoiture) {
+			System.out.println(s);
 			String string = imageBase64.Encrypter(s);
 			listphotovoiture.add(string);
+			string=new String();
 		}
 		
 		Voiture voiture = new Voiture(photovoiture, photoassurance, cartegrises, prixlocation, prixvente, nbreplace, nbreEx, marque, modele, immatriculation, statut);

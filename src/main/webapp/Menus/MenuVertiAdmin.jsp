@@ -60,7 +60,7 @@
                                         <h6 class="overline-title">Menu</h6>
                                     </li>
                                     <li class="nk-menu-item">
-                                        <a href="html/crypto/index.html" class="nk-menu-link">
+                                        <a href="#" class="nk-menu-link">
                                             <span class="nk-menu-icon"><em class="icon ni ni-dashboard"></em></span>
                                             <span class="nk-menu-text">Dashboard</span>
                                         </a>
@@ -99,6 +99,17 @@
                                         <li><a <% out.println("href=traveladmindashboard?uuid="+LogIn.user.getUuid()); %> class="btn btn-lg btn-primary"><span>Véhicules</span></a></li>
                                         <li><a href="#" class="btn btn-lg btn-warning"><span>Réservations</span></a></li>
                                     </ul>
+                                </div>
+                                <div class="nk-sidebar-menu">
+                                <!-- Menu -->
+                                	<ul class="nk-menu">
+                                		<li class="nk-menu-item">
+		                                        <a href="Accueil.jsp" class="nk-menu-link">
+		                                            <span class="nk-menu-icon"><em class="icon ni ni-dashboard"></em></span>
+		                                            <span class="nk-menu-text">Dashboard Main</span>
+		                                        </a>
+		                                </li>
+                                	</ul>
                                 </div>
                             </div><!-- .nk-sidebar-widget -->
                         </div><!-- .nk-sidebar-content -->
